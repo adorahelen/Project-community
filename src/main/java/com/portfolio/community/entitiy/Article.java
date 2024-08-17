@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 
 @Entity // JPA에서 제공하는 @로, 붙은 클래스를 기반으로 DB에 table을 생성한다. tabel name == class name
 public class Article {
+    public Article() {
+
+    }
 
     @Id // primary key : Auto Increment
     @GeneratedValue
