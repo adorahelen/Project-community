@@ -3,11 +3,13 @@ package com.portfolio.community.controller;
 import com.portfolio.community.dto.ArticleForm;
 import com.portfolio.community.entitiy.Article;
 import com.portfolio.community.repository.ArticleRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Slf4j
 @Controller
 public class ArticleController {
     @Autowired // 스프링 부트가 미리 생성해 놓은 객체, 의존성 주입
@@ -21,15 +23,18 @@ public class ArticleController {
 
     @PostMapping("/articles/create")
     public String createArticle(ArticleForm form) {
-        System.out.println(form.toString());
+        log.info(form.toString());
+//        System.out.println(form.toString());
         // 앞으로 할 작업
         // 1. DTO를 entitiy로 변환
         // 2. Repository로 entitiy를 DB에 저장
             Article article = form.toEntity();
-        System.out.println(article.toString());
+            log.info(article.toString());
+//        System.out.println(article.toString());
 
             Article saved = articleRepository.save(article);
-        System.out.println(saved.toString());
+            log.info(saved.toString());
+//        System.out.println(saved.toString());
             // 아티클 엔티티를 저장해, saved 객체에 반환한다.
 
         return " "; // 데이터는 콘솔에 찍히지만, 404만 찍힌다.(메소드 자체가 있든 없든)
