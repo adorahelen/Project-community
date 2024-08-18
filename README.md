@@ -26,6 +26,7 @@
 - return " ";과 return "";에서 반환되는 문자열이 Spring MVC에서 해석되는 방법에 차이로 인한 에러
     * return "";의 경우 : 뷰 이름이 지정되지 않았다고 간주
     * return " ";의 경우 : 공백 문자열 " "을 반환하면, Spring은 이를 뷰 이름으로 해석하려고 시도
+    * HttpRequestMethodNotSupportedException : 추후 뷰 리졸버가 뷰를 찾지 못할 때도 지원되지 않는 메소드라고 예외처리 될 수 있다.
 
 
 
