@@ -74,4 +74,18 @@ public class ArticleController {
         // 뷰 페이지 설정하기
         return "articles/edit";
     }
+
+    @PostMapping("/articles/update")
+    public String update(ArticleForm form) {
+
+        //1. DTO 를 엔티티로 2. 엔티티를 디비에 3. 수정된 결과 페이지로 리다이렉트 시키기
+        Article articleEntity = form.toEntity();
+        // 기존 데이터 가져오기
+        Article target = articleRepository.findById(articleEntity.getId()).orElse(null);
+        // 갱신하기
+        if(target != null) {
+            articleRepository.save(articleEntity);
+        }
+        return "redirect:/articles/" + articleEntity.getId();
+    }
 }

@@ -1,6 +1,10 @@
 {{>layout/header}}
 {{#article}}
-<form class="container" action="" method="post">
+<!--    액션은 폼 데이터를 어디로 보낼지 결정하고, 메소드는 어떻게 보낼지에 대한 방식을 지정한다-->
+<form class="container" action="/articles/update" method="post">
+<!--    form 태크에서 http PATCH 메소드를 지원하지 않아 그대로 진행-->
+    <input name="id" type="hidden" value="{{id}}">
+
     <div class="mb-3">
         <label class="form-label">title</label>
         <input type="text" class="form-control" name="title" value="{{title}}">
