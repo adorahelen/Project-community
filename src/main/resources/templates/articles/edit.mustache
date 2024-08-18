@@ -1,9 +1,9 @@
 {{>layout/header}}
-
+{{#article}}
 <form class="container" action="" method="post">
     <div class="mb-3">
         <label class="form-label">title</label>
-        <input type="text" class="form-control" name="title" value="{{article.title}}">
+        <input type="text" class="form-control" name="title" value="{{title}}">
 <!--        원래 인풋 태크로 생성한 요소의 초기값은 value 속성으로 정의,-->
         <!--        DTO의 타이틀 필드와 연결-->
     </div>
@@ -11,12 +11,13 @@
         <label class="form-label">Content</label>
 <!--        텍스트에리어 태크로 생성한 여러줄의 입력요소는 콘텐트 영역에 초깃값을 정의-->
         <textarea class="form-control" rows="3"
-                  name="content">{{article.content}}</textarea>
+                  name="content">{{content}}</textarea>
 
 
         <!--        DTO의 컨텐츠 필드와 연결-->
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/articles/{{article.id}}">Back</a>
+    <a href="/articles/{{id}}">Back</a>
 </form>
+{{/article}}
 {{>layout/footer}}

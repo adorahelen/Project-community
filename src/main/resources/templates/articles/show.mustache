@@ -19,6 +19,7 @@
     {{/article}}
     </tbody>
 </table>
-
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<!--프론트에서 이동시킬 url을 정의함 "/articles{id}/edit" => 백에서 엔드포인트 그대로 정의 (컨트롤러에) -->
 <a href="/articles">Go to Articles List</a>
 {{>layout/footer}}
