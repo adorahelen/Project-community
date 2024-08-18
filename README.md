@@ -22,7 +22,8 @@
 ## Debugging
 - 2024-08-18T15:42:39.227+09:00  WARN 1236 --- [community] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/e16cbdd7-01c6-4eaa-a0f0-63737eec3d55">
--  return " ";과 return "";에서 반환되는 문자열이 Spring MVC에서 해석되는 방법에 차이로 인한 에러
+
+- return " ";과 return "";에서 반환되는 문자열이 Spring MVC에서 해석되는 방법에 차이로 인한 에러
     * return "";의 경우 : 뷰 이름이 지정되지 않았다고 간주
     * return " ";의 경우 : 공백 문자열 " "을 반환하면, Spring은 이를 뷰 이름으로 해석하려고 시도
 
